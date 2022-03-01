@@ -26,6 +26,17 @@ from socket import *
 from struct import *
 from threading import *
 
+# back support
+try:
+    xrange
+except NameError:
+    xrange = range
+
+try:
+    buffer
+except NameError:
+    buffer = memoryview
+
 if os.name == 'posix':
     c = os.system('which pip')
     if c == 256:
