@@ -277,9 +277,11 @@ class Requester(Thread):
                 self.req.append(conn)
             for reqter in self.req:
                 (url, http_header) = self.data()
-                method = choice(['get', 'post'])
-                reqter.request(method.upper(), url, None, http_header)
-                print(reqter.getresponse().getcode())
+                # method = choice(['get', 'post'])
+                method = 'get'
+                reqter.request(method.upper(), "/", None, http_header)
+                response = reqter.getresponse()
+                print(response.getcode(), response.reason)
         except KeyboardInterrupt:
             sys.exit(cprint('[-] Canceled by user', 'red'))
         except Exception as e:
