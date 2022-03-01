@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-version = '3.0'
+version = '4.0'
 title = '''
 
       _ \        __ \  __ \               ___|           _)       |   
